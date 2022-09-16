@@ -1,0 +1,35 @@
+med1 = int(input())
+med2 = int(input())
+tot_pac, pac_med1, pac_med2 = 0, 0, 0
+
+while med1 > 0 and med2 > 0:
+    sis = int(input())
+    dias = int(input())
+
+    if sis < 70 and dias < 50:
+        pac_med2 += 1
+        med2 -= 5
+    elif 120 <= sis < 130 and 75 <= dias < 80:
+        pac_med1 += 1
+        med1 -= 10
+    elif 130 <= sis < 150 and 80 <= dias < 90:
+        pac_med1 += 1
+        med1 -= 15
+    elif 150 <= sis < 170 and 90 <= dias < 100:
+        pac_med1 += 1
+        med1 -= 25
+    elif sis >= 170 and dias >= 100:
+        pac_med1 += 1
+        med1 -= 45
+    elif sis >= 130 and dias < 80:
+        pac_med1 += 1
+        med1 -= 25
+    tot_pac += 1
+        
+print(tot_pac)
+if tot_pac > 0:
+    print('{:} {:.2f}%'.format(pac_med1, pac_med1 / tot_pac * 100))
+    print('{:} {:.2f}%'.format(pac_med2, pac_med2 / tot_pac * 100))
+else:
+    print('0 0.00%')
+    print('0 0.00%')
